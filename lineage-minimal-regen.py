@@ -18,7 +18,7 @@ if os.path.isdir("lineage_manifest"):
 else:
     print("Downloading lineage_manifest repository...")
     lineage_manifest = git.Repo.clone_from(
-        "https://github.com/LineageOS/android", "lineage_manifest"
+        "https://github.com/FurnaceOS/android", "lineage_manifest"
     )
 
 # Get all the refs
@@ -53,7 +53,7 @@ for index, ref in enumerate(refs, 1):
                 continue
 
             # Ignore non-Lineage projects
-            if not child.attrib["name"].startswith("LineageOS/"):
+            if not child.attrib["name"].startswith("FurnaceOS/"):
                 continue
 
             repos.add(child.attrib["name"].rstrip("/"))
